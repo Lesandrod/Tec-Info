@@ -46,6 +46,7 @@ function App() {
 
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.correoInstitucional}</p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">DNI: {student.numDocumento}</p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Dirección: {student.dirDomicilio}</p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.ciclo} Ciclo</p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"><img src={student.sexo === 'M' ? chico : chica} width={40} /> </p>
               </div>
