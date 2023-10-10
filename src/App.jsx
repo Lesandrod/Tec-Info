@@ -19,7 +19,7 @@ function App() {
     const fechaNacimiento = student.fecNacimiento;
     if (Array.isArray(fechaNacimiento) && fechaNacimiento.length >= 3) {
       const [age, mes, dia] = fechaNacimiento
-      fechaFormateada = `${age}/${mes}/${dia}`;
+      fechaFormateada = `${dia < 10 ? '0' + dia : dia}/${mes}/${age}`;
 
 
     } else {
@@ -34,6 +34,7 @@ function App() {
   const BuscarFoto = () => {
     SearchData1(setStudent, inputValue)
     SearchPhoto(setCode, inputValue)
+    
   }
 
   return (
@@ -41,7 +42,7 @@ function App() {
 
       <center>
         <div className="lupa mt-9">
-          <input value={inputValue} onChange={handleInputChange} class="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Ingrese codigo alumno" />
+          <input value={inputValue} onChange={handleInputChange} className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Ingrese codigo alumno" />
           <button onClick={BuscarFoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
             Buscar
           </button>
@@ -59,28 +60,28 @@ function App() {
               <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{student.fullname}</h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <BsShieldCheck size={22} className="inline-block mr-2" /> {student.especialidad}
+                  <BsShieldCheck size={22} className="inline-block mr-5" /> {student.especialidad}
                 </p>
 
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <AiOutlineMail size={22} className="inline-block mr-2" /> {student.correoInstitucional}
+                  <AiOutlineMail size={22} className="inline-block mr-5" /> {student.correoInstitucional}
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <BiCake size={22} className="inline-block mr-2" /> {fechaFormateada}
+                  <BiCake size={22} className="inline-block mr-5" /> {fechaFormateada}
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <HiOutlineIdentification size={22} className="inline-block mr-2" /> {student.numDocumento}
+                  <HiOutlineIdentification size={22} className="inline-block mr-5" /> {student.numDocumento}
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <AiOutlineHome size={22} className="inline-block mr-2" /> {student.dirDomicilio}
+                  <AiOutlineHome size={22} className="inline-block mr-5" /> {student.dirDomicilio}
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <BsTelephone size={22} className="inline-block mr-2" /> {student.telCelular}
+                  <BsTelephone size={22} className="inline-block mr-5" /> {student.telCelular}
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  <BiRadar size={22} className="inline-block mr-2" />   Ciclo {student.ciclo}
+                  <BiRadar size={22} className="inline-block mr-5" />   Ciclo {student.ciclo}
                 </p>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.sexo === 'M' ? <p><AiOutlineMan size={22} className="inline-block mr-2" /> Man</p> : <p><AiOutlineWoman size={22} className="inline-block mr-2" /> Woman</p>} </p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.sexo === 'M' ? <p><AiOutlineMan size={22} className="inline-block mr-5" /> Man</p> : <p><AiOutlineWoman size={22} className="inline-block mr-2" /> Woman</p>} </p>
               </div>
             </div>
           </div>
