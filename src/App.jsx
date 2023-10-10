@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { SearchPhoto, SearchData1 } from './func/getInfo'
 
-import { AiOutlineMail ,AiOutlineHome,AiOutlineMan,AiOutlineWoman} from "react-icons/ai";
-import { BiCake ,BiRadar} from "react-icons/bi";
-import { BsShieldCheck ,BsTelephone} from "react-icons/bs";
+import { AiOutlineMail, AiOutlineHome, AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
+import { BiCake, BiRadar } from "react-icons/bi";
+import { BsShieldCheck, BsTelephone } from "react-icons/bs";
 import { HiOutlineIdentification } from "react-icons/hi2";
 import './App.css'
 
@@ -21,7 +21,7 @@ function App() {
       const [age, mes, dia] = fechaNacimiento
       fechaFormateada = `${age}/${mes}/${dia}`;
 
-      // Resto del código
+
     } else {
       fechaFormateada = 'Fecha no válida'
     }
@@ -53,9 +53,9 @@ function App() {
 
 
         {student && (
-          <div className="">
-            <div href="#" className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-              <img className="object-cover w-49 rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={code} alt="Foto del alumno" />
+          <div className="m-5">
+            <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl hover:bg-gray-100 ">
+              <img className="object-cover w-49 rounded-t-lg  md:h-auto  md:rounded-none md:rounded-l-lg" src={code} alt="Foto del alumno" width={247} />
               <div className="flex flex-col justify-between p-4 leading-normal">
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{student.fullname}</h5>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
@@ -73,14 +73,14 @@ function App() {
                 </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   <AiOutlineHome size={22} className="inline-block mr-2" /> {student.dirDomicilio}
-                </p> 
+                </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   <BsTelephone size={22} className="inline-block mr-2" /> {student.telCelular}
-                </p> 
+                </p>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   <BiRadar size={22} className="inline-block mr-2" />   Ciclo {student.ciclo}
                 </p>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.sexo === 'M' ? <p><AiOutlineMan size={22}  className="inline-block mr-2"/> Man</p> : <p><AiOutlineWoman size={22}  className="inline-block mr-2"/> Woman</p>} </p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{student.sexo === 'M' ? <p><AiOutlineMan size={22} className="inline-block mr-2" /> Man</p> : <p><AiOutlineWoman size={22} className="inline-block mr-2" /> Woman</p>} </p>
               </div>
             </div>
           </div>
