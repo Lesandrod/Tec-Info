@@ -33,10 +33,11 @@ function App() {
     setInputValue(e.target.value)
   }
 
-  const BuscarFoto = () => {
+  const BuscarFoto = (e) => {
+    e.preventDefault();
     SearchData1(setStudent, inputValue)
     SearchPhoto(setCode, inputValue)
-    
+
   }
 
   return (
@@ -44,10 +45,24 @@ function App() {
 
       <center>
         <div className="lupa mt-9">
-          <input value={inputValue} onChange={handleInputChange} className="shadow appearance-none border rounded  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Ingrese codigo alumno" />
-          <button onClick={BuscarFoto} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
-            Buscar
-          </button>
+          <form onSubmit={BuscarFoto}>
+            <input
+              value={inputValue}
+              onChange={handleInputChange}
+              className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              placeholder="Ingrese código alumno"
+            />
+            <button
+              type="submit"
+              disabled={inputValue.length === 0}
+              style={inputValue.length === 0 ? { opacity: 0.5, cursor: 'not-allowed' } : null}
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            >
+              Buscar
+            </button>
+          </form>
+
         </div>
 
       </center>
@@ -90,8 +105,8 @@ function App() {
         )}
       </div>
       <div>
-      
-    </div>
+
+      </div>
 
 
 
