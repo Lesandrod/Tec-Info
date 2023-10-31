@@ -13,6 +13,8 @@ function App() {
   const [student, setStudent] = useState(null)
   const [inputValue, setInputValue] = useState('')
 
+  const year = new Date().getFullYear();
+
   let fechaFormateada = '';
 
 
@@ -67,7 +69,7 @@ function App() {
 
       </center>
 
-      <div className="flex justify-center mt-20 ">
+      <div className="flex justify-center mt-4 md:mt-20 ">
 
 
         {student && (
@@ -110,7 +112,13 @@ function App() {
 
 
 
+      <div className="footer fixed bottom-0 w-full bg-blue-600">
+        <p className="text-white text-center text-sm p-1">© {year} - Desarrollado por <a className='hover:text-black' href="https://github.com/Lesandrod" target='_blank'>Lennard</a> - 🖤</p>
+      
+        
 
+      
+      </div>
 
     </>
   )
