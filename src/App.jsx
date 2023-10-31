@@ -73,7 +73,7 @@ function App() {
 
 
         {student && (
-          <div className="m-5">
+          <div className="">
             <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl hover:bg-gray-100 ">
               <img className="object-cover w-49 rounded-t-lg p-2  md:h-auto  md:rounded-none md:rounded-l-lg" src={code} alt="Foto del alumno" width={247} />
               <div className="flex flex-col justify-between p-4 leading-normal">
