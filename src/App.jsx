@@ -73,7 +73,7 @@ function App() {
 
 
         {student && (
-          <div className="">
+          <div className=" ">
             <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl hover:bg-gray-100 ">
               <img className="object-cover w-49 rounded-t-lg p-2  md:h-auto  md:rounded-none md:rounded-l-lg" src={code} alt="Foto del alumno" width={247} />
               <div className="flex flex-col justify-between p-4 leading-normal">
@@ -112,8 +112,8 @@ function App() {
 
 
 
-      <div className="footer fixed bottom-0 w-full bg-blue-600">
-        <p className="text-white text-center text-sm p-1">© {year} - Desarrollado por <a className='hover:text-black' href="https://github.com/Lesandrod" target='_blank'>Lennard</a> - 🖤</p>
+      <div className="footer fixed bottom-0 w-full bg-blue-600 flex flex-col justify-center h-7">
+        <p className="text-white text-center text-sm ">© {year} - Desarrollado por <a className='hover:text-black hover:text-base' href="https://github.com/Lesandrod" target='_blank'>Lennard</a> - 🖤</p>
       
         
 
