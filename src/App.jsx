@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { SearchPhoto, SearchData1 } from './func/getInfo'
-
+import Yop from './assets/PINTR.svg';
 import { AiOutlineMail, AiOutlineHome, AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
 import { BiCake, BiRadar } from "react-icons/bi";
 import { BsShieldCheck, BsTelephone } from "react-icons/bs";
@@ -45,8 +45,12 @@ function App() {
   return (
     <>
 
+      <section className='text-center mt-5'>
+        <h1 className='text-3xl font-bold font-mono text-blue-700 uppercase'>Buscador de Estudiantes - TECSUP</h1>
+      </section>
       <center>
         <div className="lupa mt-9">
+
           <form onSubmit={BuscarFoto}>
             <input
               value={inputValue}
@@ -104,16 +108,9 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className=" ">
+          <div className="mt-20 p-5 md:mt-1 md:p-1">
             <center>
-              <div className=''>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="100" height="100" fill="red">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-15c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-1 5h2v4h-2zm0 6h2v2h-2z" />
-                </svg>
-              </div>
-              <div className="texto">
-                <p>Este sitio ha sido reclamado debido al uso indebido de datos. El acceso está denegado conforme a las políticas de privacidad y regulaciones legales. Para más información, contacta al administrador del sitio. Agradecemos tu comprensión.</p>
-              </div>
+              <img src={Yop} width={300} alt="DDDD" />
 
             </center>
 
