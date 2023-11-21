@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SearchPhoto, SearchData1 } from './func/getInfo'
 import Yop from './assets/PINTR.svg';
+import Navidad from './assets/navidad.svg';
 import { AiOutlineMail, AiOutlineHome, AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
 import { BiCake, BiRadar } from "react-icons/bi";
 import { BsShieldCheck, BsTelephone } from "react-icons/bs";
@@ -12,13 +13,15 @@ function App() {
   const [code, setCode] = useState('')
   const [student, setStudent] = useState(null)
   const [inputValue, setInputValue] = useState('')
-
+  const [selectedSVG, setSelectedSVG] = useState('');
   const year = new Date().getFullYear();
+
+
 
   let fechaFormateada = '';
 
 
-  //opcion para formatear la fecha 
+
   if (student && student.fecNacimiento) {
     const fechaNacimiento = student.fecNacimiento;
     if (Array.isArray(fechaNacimiento) && fechaNacimiento.length >= 3) {
@@ -41,12 +44,26 @@ function App() {
     SearchPhoto(setCode, inputValue)
 
   }
+  const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  useEffect(() => {
+
+    const randomNumber = getRandomInt(1, 2);
+
+
+    if (randomNumber === 1) {
+      setSelectedSVG(Yop);
+    } else {
+      setSelectedSVG(Navidad);
+    }
+  }, []);
 
   return (
     <>
 
       <section className='text-center mt-5'>
-        <h1 className='text-3xl font-bold font-mono text-blue-700 uppercase'>Buscador de Estudiantes - TECSUP</h1>
+        <h1 className='text-3xl font-bold font-mono text-blue-700 uppercase'>Buscador de Estudiantes de Tecsup</h1>
       </section>
       <center>
         <div className="lupa mt-9">
@@ -110,7 +127,7 @@ function App() {
         ) : (
           <div className="mt-20 p-5 md:mt-1 md:p-1">
             <center>
-              <img src={Yop} width={300} alt="DDDD" />
+              <img src={selectedSVG} width={300} alt="DDDD" />
 
             </center>
 
