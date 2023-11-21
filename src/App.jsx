@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { getRandomInt } from './func/getInfo';
 import { SearchPhoto, SearchData1 } from './func/getInfo'
 import Yop from './assets/PINTR.svg';
 import Navidad from './assets/navidad.svg';
@@ -44,9 +45,10 @@ function App() {
     SearchPhoto(setCode, inputValue)
 
   }
-  const getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
+
+
+
+
   useEffect(() => {
 
     const randomNumber = getRandomInt(1, 2);
@@ -130,7 +132,6 @@ function App() {
               <img src={selectedSVG} width={300} alt="DDDD" />
 
             </center>
-
 
             {/* <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl hover:bg-gray-100 ">
 
