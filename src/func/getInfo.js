@@ -6,7 +6,7 @@ const SearchPhoto = (state, id) => {
 
 const SearchData1 = async (state, id) => {
 
-    const response = await axios.get(`https://backinfotecv2.vercel.app/api/alumno/${id}`)
+    const response = await axios.get(`https://backinfotecv2.vercel.app/api/alumno/v1/${id}`)
     console.log(response.data);
     state(response.data);
 
