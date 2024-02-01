@@ -48,8 +48,8 @@ const Navbar = () => {
                             } md:flex md:items-center mt-4 md:mt-0`}
                     >
                         <ul className="md:flex space-x-4">
-                            {Linkpath.map((link) => (
-                                <li key={link.index}>
+                            {Linkpath.map((link, index) => (
+                                <li key={index}>
                                     <Link
                                         to={link.path}
                                         className="text-white hover:underline"
